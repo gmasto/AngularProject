@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormArray, FormControl, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Params, Router } from '@angular/router';
-import { Recipe } from '../recipe.model';
+// import { Recipe } from '../recipe.model';
 import { RecipeService } from '../recipe.service';
 
 @Component({
@@ -13,6 +13,11 @@ export class RecipeEditComponent implements OnInit {
   id: number;
   editMode = false;
   recipeForm: FormGroup
+
+  // The getter method bellow is an alternative to use inside the ngFor loop in the Html file (replaces the 'controls')
+  // get ingredientsControl() {
+  //   return (this.recipeForm.get('ingredients') as FormArray).controls
+  // }
 
   constructor(private route: ActivatedRoute, private recipeService: RecipeService, private router: Router) { }
 
